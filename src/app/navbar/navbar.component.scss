@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252a;
+}
+
+li,a,button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color:#edf0f1 ;
+    text-decoration: none;
+}
+
+div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    img{
+        width: 150px;
+        height: auto;
+    }
+    .logo{
+        cursor: pointer;
+    }
+    nav .nav-links{
+        list-style: none;
+        li{
+            display: inline-block;
+            padding: 0px 20px;
+            a{
+              transition: all 0.3s ease 0s;  
+            }
+            a:hover{
+                color: rgba(181,19,39,0.8);
+            }
+        }
+    }
+    button{
+       padding: 9px 25px;
+       background-color: var(--main-bg-color);
+       border: none;
+       border-radius: 50px;
+       cursor: pointer; 
+       transition: all 0.3s ease 0s;
+    }
+    button:hover{
+        background-color: rgba(181,19,39,0.8);
+    }
+}
