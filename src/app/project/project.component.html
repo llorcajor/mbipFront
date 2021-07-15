@@ -1,1 +1,14 @@
-<p>project works!</p>
+<div class="site-container" *ngIf="identity">
+   <div class="article-container" *ngFor="let project of projects">
+       <article class="article-card">
+           <figure class="article-image">
+               <img src="{{project.imagePath}}" alt="{{project.name}}">
+           </figure>
+           <div class="article-content">
+               <a href="#" class="card-category">{{project.name}}</a>
+               <h3 class="card-title">{{project.tag}}</h3>
+               <p class="card-excerpt">{{project.description}}</p>
+           </div>
+       </article>
+   </div> 
+</div>
