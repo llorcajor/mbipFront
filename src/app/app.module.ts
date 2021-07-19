@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +17,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { ProjectNewComponent } from './project-new/project-new.component';
 import { IdentityGuard } from './services/identity.guard';
 import { UserService } from './services/user.service';
+import { InitialPageComponent } from './initial-page/initial-page.component';
+import { ProjectEditComponent } from './project-edit/project-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +28,17 @@ import { UserService } from './services/user.service';
     LoginComponent,
     RegisterComponent,
     UserEditComponent,
-    ProjectNewComponent
+    ProjectNewComponent,
+    InitialPageComponent,
+    ProjectEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
+
   ],
   providers: [
     IdentityGuard,

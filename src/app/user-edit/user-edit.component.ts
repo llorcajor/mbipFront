@@ -25,9 +25,12 @@ export class UserEditComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this._userService.update(this.token, this.user).subscribe(
+    this._userService.update(this.user, this.token ).subscribe(
       response =>{
         console.log(response);
+        this.identity = response.user;
+        this.user = response.user;
+        localStorage.setItem('identity', JSON.stringify(this.identity));
       },
       error => {
         console.log(error);

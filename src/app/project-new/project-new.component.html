@@ -3,7 +3,7 @@
 <form class="col-md-5 ml-0 pl-0" #projectForm="ngForm" (ngSubmit)= "onSubmit(projectForm)">
     <div class="form-group">
         <label for="name">Nombre</label>
-        <input type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="project.name"  required pattern="[a-zA-Z]+">
+        <input type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="project.name"  required >
 
         <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
             El nombre no es valido
@@ -12,10 +12,10 @@
 
     <div class="form-group">
         <label for="description">Descripcion</label>
-        <input type="text" name="description" class="form-control" #description="ngModel" [(ngModel)]="project.description" required>
+        <textarea name="description" class="form-control" #description="ngModel" [(ngModel)]="project.description"></textarea>
 
         <small *ngIf="!description.valid && description.touched" class="invalid-feedback d-block">
-            Los apellido no son validos
+            La Descripcion no es valida
         </small>
     </div>
 

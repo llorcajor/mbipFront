@@ -7,8 +7,6 @@ import { global } from "../services/global";
 @Injectable()
 export class ProjectService{
     public url: string;
-    public identity: any;
-    public token: any;
     projectSelected = new EventEmitter<Project>();
 
     constructor(
@@ -24,12 +22,24 @@ export class ProjectService{
           getProjects(){
               return this.projects.slice();
           }
-        register(project: Project):Observable<any>{
+          
+        create(token: any, project: Project):Observable<any>{
             let json= JSON.stringify(project);
             let params = 'json='+json;
     
-            let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+            let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                            .set('Authorization', token);
     
-            return this._http.post(this.url+'create', params, {headers: headers});
+            return this._http.post(this.url+'video/new', params, {headers:headers});
+        }
+
+        update(project: Project, token: string):Observable<any>{
+            let json= JSON.stringify(project);
+            let params = 'json='+json;
+    
+            let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                            .set('Authorization', token);
+    
+            return this._http.post(this.url+'project/edit', params, {headers:headers});
         }
     }
