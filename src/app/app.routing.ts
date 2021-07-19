@@ -24,6 +24,7 @@ const appRoutes : Routes = [
     {path: 'proyecto/:id', component: ProjectEditComponent, canActivate: [IdentityGuard]},
     {path: 'new-project', component: ProjectNewComponent, canActivate: [IdentityGuard]},
     {path: 'prueba', component: ProjectNewComponent},
+    {path: 'prueba', component: ProjectNewComponent},
 ];
 
 @NgModule({
