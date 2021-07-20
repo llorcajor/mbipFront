@@ -19,6 +19,7 @@ import { IdentityGuard } from './services/identity.guard';
 import { UserService } from './services/user.service';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 import { ProjectEditComponent } from './project-edit/project-edit.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProjectEditComponent } from './project-edit/project-edit.component';
     UserEditComponent,
     ProjectNewComponent,
     InitialPageComponent,
-    ProjectEditComponent
+    ProjectEditComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,35 @@
 <div class="site-container" *ngIf="identity">
    <div class="article-container" *ngFor="let project of projects">
+    
        <article class="article-card">
+       
            <figure class="article-image">
                <img src="{{project.imagePath}}" alt="{{project.name}}">
            </figure>
+        
            <div class="article-content">
-               <a href="#" class="card-category">{{project.name}}</a>
-               <h3 class="card-title">{{project.tag}}</h3>
+               <a class="card-category">{{project.name}}</a>
+               <h3 class="card-title">{{project.category}}</h3>
                <p class="card-excerpt">{{project.description}}</p>
+               <button class="btn btn-danger" (click)="deleteProject(project.id)">Borrar</button>
+               <a class="btn btn-warning" [routerLink]= "['/project-edit', project.id]">Editar</a>
+               <a class="btn btn-success" [routerLink]="['/project-detail', project.id]">Ver</a>
+      
            </div>
        </article>
+    
    </div> 
 </div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" [routerLink]= "['/inicio', prev_page]">Anterior</a></li>
+      <li class="page-item" *ngFor="let num of number_page"><a class="page-link" [routerLink]= "['/inicio', num]" >{{num}}</a></li>
+      
+      <li class="page-item"><a class="page-link" [routerLink]= "['/inicio', next_page]">Siguiente</a></li>
+    </ul>
+  </nav>
+
+
+
+

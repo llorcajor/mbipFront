@@ -4,24 +4,20 @@ import { Project } from '../models/project.model';
 import { ProjectService } from '../project/project.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
-
-
-
 @Component({
-  selector: 'app-project-edit',
-  templateUrl: './project-edit.component.html',
-  styleUrls: ['./project-edit.component.scss'],
+  selector: 'app-project-detail',
+  templateUrl: './project-detail.component.html',
+  styleUrls: ['./project-detail.component.scss'],
   providers: [UserService, ProjectService]
 })
-export class ProjectEditComponent implements OnInit {
-  public project: Project;
+export class ProjectDetailComponent implements OnInit {
+
+  public project!: Project;
   public identity;
   public token;
 
   constructor(private _projectService: ProjectService, private _route: ActivatedRoute, private _router: Router, private _userService: UserService) { 
     this.identity = this._userService.getIdentity();
-    this.project = new Project(1,'','','','',1,this.identity.sub,'');
-
     this.token = this._userService.getToken();
   }
 
@@ -45,17 +41,4 @@ export class ProjectEditComponent implements OnInit {
     });
   }
 
-  onSubmit(form: NgForm){
-    this._projectService.update(this.project, this.token, this.project.id).subscribe(
-      response => {
-        console.log(response);
-        this._router.navigate(['/inicio']);
-      },
-      error => {
-        console.log(error);
-        this._router.navigate(['/inicio']);
-      }
-   );
-  }
 }
-
