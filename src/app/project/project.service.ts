@@ -3,7 +3,7 @@ import { Project } from "../models/project.model";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from "rxjs";
 import { global } from "../services/global";
-import { NumberFormatStyle } from "@angular/common";
+
 
 @Injectable()
 export class ProjectService{
@@ -16,9 +16,7 @@ export class ProjectService{
         this.url = global.url;
     }
     
-        private projects: Project[] =[
-            new Project(1,'Travel', 'Food','Pequeña descripcion de prueba para ver que tal queda','https://i0.wp.com/goula.lat/wp-content/uploads/2019/12/hamburguesa-beyond-meat-scaled-e1577396155298.jpg?fit=1600%2C1068&ssl=1', 1, 1, '')
-          ];
+    
     
         getProjects(token: string, page:number):Observable<any>{
     

@@ -9,7 +9,7 @@
         
            <div class="article-content">
                <a class="card-category">{{project.name}}</a>
-               <h3 class="card-title">{{project.category}}</h3>
+               <h3 class="card-title">{{project.category.id}}</h3>
                <p class="card-excerpt">{{project.description}}</p>
                <button class="btn btn-danger" (click)="deleteProject(project.id)">Borrar</button>
                <a class="btn btn-warning" [routerLink]= "['/project-edit', project.id]">Editar</a>

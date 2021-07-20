@@ -32,6 +32,7 @@ export class ProjectDetailComponent implements OnInit {
       this._projectService.getProject(this.token, id).subscribe(
         response => {
           this.project = response.project;
+          console.log(this.project.category);
         },
         error => {
           console.log(error);
