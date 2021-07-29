@@ -1,10 +1,35 @@
-<div class="col-md-12" *ngIf="!project">
-    Cargando ...
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav nav-pills">
+          <li class="nav-item" >
+            <a class="nav-link" aria-current="page" routerLink="/myprojects" routerLinkActive="active">My Projects</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/ajustes" routerLinkActive="active">My account</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/new-project" routerLinkActive="active">Create new Project</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/logout/1" routerLinkActive="active">Exit</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+</nav>
 
-<div class="col-md-12 mt-3" *ngIf="project">
-    <h1>{{project.name}}</h1>
+
+<div class="card m-auto" style="width: 18rem;">
+  <img src="{{project.imageUrl}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{project.name}}</h5>
     <span class="badge bg-secondary">{{identity.name + ' ' + identity.surname}}</span>
-    <p >{{project.description}}</p>
-    <p >{{project.category.name}}</p>
+    <p class="card-text">{{project.description}}</p>
+    <button class="btn btn-success">{{project.category.name}}</button>
+  </div>
 </div>

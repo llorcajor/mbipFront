@@ -26,6 +26,14 @@ export class ProjectService{
             return this._http.get(this.url+'project/list?page='+page, {headers:headers});
         }
 
+        getOtherProjects(token: string, page:number):Observable<any>{
+    
+            let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                            .set('Authorization', token);
+    
+            return this._http.get(this.url+'project/list_other?page='+page, {headers:headers});
+        }
+
         getProject(token: string, id:number):Observable<any>{
             
             let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
@@ -60,5 +68,12 @@ export class ProjectService{
                                             .set('Authorization', token);
     
             return this._http.delete(this.url+'project/remove/'+id, {headers:headers});
+        }
+
+        onMatch(token: string, id: number){
+
+            let headers = new HttpHeaders().set('Authorization', token);
+    
+            return this._http.get(this.url+'follow/match/'+id, {headers:headers});
         }
     }

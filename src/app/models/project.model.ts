@@ -1,24 +1,23 @@
 import { Category } from "./category.model";
+import { User } from "./user.model";
 
 export class Project{
     public id: number;
     public name: string;
-    public tag: string;
     public description: string;
-    public imagePath: string;
+    public imageUrl: string;
     public category: Category;
-    public userId: number;
+    public user: User;
     public createdAt: string;
     
 
-    constructor(id:number, name:string, tag:string, desc:string, imagePath:string, category: Category, userId: number, createdAt: string){
+    constructor(id:number, name:string, desc:string, imagePath:string, category: Category, userId: User, createdAt: string){
         this.id= id;
         this.name = name;
-        this.tag = tag;
         this.description= desc;
-        this.imagePath = imagePath;
+        this.imageUrl = imagePath;
         this.category = category;
-        this.userId = userId;
+        this.user = userId;
         this.createdAt = createdAt;
         
     }

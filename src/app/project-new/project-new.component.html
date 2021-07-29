@@ -1,20 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav nav-pills">
+          <li class="nav-item" >
+            <a class="nav-link" aria-current="page" routerLink="/myprojects" routerLinkActive="active">My Projects</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/ajustes" routerLinkActive="active">My account</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/new-project" routerLinkActive="active">Create new Project</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/logout/1" routerLinkActive="active">Exit</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+
 <div class="col-md-12">
-<h1>Create new project</h1>
-<form class="col-md-5 ml-0 pl-0" #projectForm="ngForm" (ngSubmit)= "onSubmit(projectForm)">
+<form class="col-md-5 m-auto pl-0" #projectForm="ngForm" (ngSubmit)= "onSubmit(projectForm)">
     <div class="form-group">
         <label for="name">Nombre</label>
-        <input type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="project.name"  required >
+        <input type="text" name="name" class="form-control mb-3" #name="ngModel" [(ngModel)]="project.name"  required >
 
-        <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
+        <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block mb-3">
             El nombre no es valido
         </small>
     </div>
 
     <div class="form-group">
         <label for="description">Descripcion</label>
-        <textarea name="description" class="form-control" #description="ngModel" [(ngModel)]="project.description"></textarea>
+        <textarea name="description" class="form-control mb-3" #description="ngModel" [(ngModel)]="project.description"></textarea>
 
-        <small *ngIf="!description.valid && description.touched" class="invalid-feedback d-block">
+        <small *ngIf="!description.valid && description.touched" class="invalid-feedback d-block mb-3">
             La Descripcion no es valida
         </small>
     </div>

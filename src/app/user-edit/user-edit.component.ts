@@ -10,6 +10,7 @@ import {UserService} from '../services/user.service';
   providers: [UserService]
 })
 export class UserEditComponent implements OnInit {
+  
 
   public user: User;
   public identity;
@@ -39,3 +40,5 @@ export class UserEditComponent implements OnInit {
   }
 
 }
+
+

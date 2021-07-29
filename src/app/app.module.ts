@@ -20,6 +20,7 @@ import { UserService } from './services/user.service';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 import { ProjectEditComponent } from './project-edit/project-edit.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { OtherProjectsComponent } from './other-projects/other-projects.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
     ProjectNewComponent,
     InitialPageComponent,
     ProjectEditComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    OtherProjectsComponent
   ],
   imports: [
     BrowserModule,

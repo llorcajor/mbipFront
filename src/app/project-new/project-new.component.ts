@@ -20,7 +20,7 @@ export class ProjectNewComponent implements OnInit {
 
   constructor(private _projectService: ProjectService, private _route: ActivatedRoute, private _router: Router, private _userService: UserService) { 
     this.identity = this._userService.getIdentity();
-    this.project = new Project(1,'','','','',this.category,this.identity.sub,'');
+    this.project = new Project(1,'','','',this.category,this.identity.sub,'');
 
     this.token = this._userService.getToken();
   }

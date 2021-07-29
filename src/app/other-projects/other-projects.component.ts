@@ -2,35 +2,32 @@ import { Component, OnInit } from '@angular/core';
 import {Project} from '../models/project.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
-import { ProjectService } from './project.service';
-
+import { ProjectService } from '../project/project.service';
+import { FollowService } from '../services/follow.service';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss'],
-  providers: [ProjectService]
+  selector: 'app-other-projects',
+  templateUrl: './other-projects.component.html',
+  styleUrls: ['./other-projects.component.scss'],
+  providers: [ProjectService, FollowService]
 })
-export class ProjectComponent implements OnInit {
-   projects: Project[]=[];
-   private token: any;
-   identity: any;
-   public page!: number;
-   public next_page: number | undefined;
-   public prev_page: number | undefined;
-   public number_page: number[]= [];
-
-
-  constructor(private _projectService: ProjectService, private _userService: UserService, private _route: ActivatedRoute, private _router: Router) {
+export class OtherProjectsComponent implements OnInit {
+  projects: Project[]=[];
+  follows: any;
+  private token: any;
+  identity: any;
+  public page!: number;
+  public next_page: number | undefined;
+  public prev_page: number | undefined;
+  public number_page: number[]= [];
+  constructor(private _projectService: ProjectService, private _userService: UserService, private _route: ActivatedRoute, private _router: Router, private _followService: FollowService) { 
     this.identity= this._userService.getIdentity();
     this.token = this._userService.getToken();
-   }
-
-  ngOnInit(): void {
-    this.actualPage();
+    
   }
 
-  actualPage(){
+  ngOnInit(): void {
+    this.checkMatch();
     this._route.params.subscribe(params => {
       var page = +params['page'];
 
@@ -39,12 +36,12 @@ export class ProjectComponent implements OnInit {
         this.prev_page=1;
         this.next_page=2;
       }
-      this.getProjects(page);
+      this.getOtherProjects(page);
     });
   }
 
-  getProjects(page: number){
-    this._projectService.getProjects(this.token, page).subscribe(
+  getOtherProjects(page: number){
+    this._projectService.getOtherProjects(this.token, page).subscribe(
       response => {
         this.projects= response.projects;
         var number_pages= [];
@@ -79,17 +76,30 @@ export class ProjectComponent implements OnInit {
     );
   }
 
-  deleteProject(id: number){
-    this._projectService.delete(this.token, id).subscribe(
+  onMatch(id: number){
+    this._projectService.onMatch(this.token, id).subscribe(
       response => {
-        this.actualPage();
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+        
+      }
+
+    )
+  }
+
+  checkMatch(){
+    this._followService.checkMatch(this.token).subscribe(
+      response => {
+        console.log(response);
+        this.follows= response.query;
       },
       error => {
         console.log(error);
       }
-      );
-      
-  }
 
+    )
+  }
 
 }

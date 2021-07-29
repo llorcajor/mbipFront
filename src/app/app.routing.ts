@@ -11,14 +11,17 @@ import { ProjectNewComponent } from './project-new/project-new.component';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 import { ProjectEditComponent } from './project-edit/project-edit.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { OtherProjectsComponent } from './other-projects/other-projects.component';
 
 import { IdentityGuard } from './services/identity.guard';
 
 
 const appRoutes : Routes = [
     {path: '', component: InitialPageComponent},
-    {path: 'inicio', component: ProjectComponent},
-    {path: 'inicio/:page', component: ProjectComponent},
+    {path: 'myprojects', component: ProjectComponent},
+    {path: 'myprojects/:page', component: ProjectComponent},
+    {path: 'home', component: OtherProjectsComponent},
+    {path: 'home/:page', component: OtherProjectsComponent},
     {path: 'login', component: LoginComponent},
     {path: 'logout/:sure', component: LoginComponent},
     {path: 'registro', component: RegisterComponent},
