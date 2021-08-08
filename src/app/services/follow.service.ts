@@ -24,4 +24,12 @@ export class FollowService{
 
         return this._http.get(this.url+'follow/check', {headers:headers});
     }
+
+    checkMyMatchs(token: string):Observable<any>{
+            
+        let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                        .set('Authorization', token);
+
+        return this._http.get(this.url+'follow/mycheck', {headers:headers});
+    }
 }

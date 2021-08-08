@@ -29,28 +29,18 @@
   </div>
 </nav>
 
-
-<div class="col-md-12">
-<form class="col-md-5 m-auto pl-0" #projectForm="ngForm" (ngSubmit)= "onSubmit(projectForm)">
-    <div class="form-group">
-        <label for="name">Nombre</label>
-        <input type="text" name="name" class="form-control mb-3" #name="ngModel" [(ngModel)]="project.name"  required >
-
-        <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block mb-3">
-            El nombre no es valido
-        </small>
-    </div>
-
-    <div class="form-group">
-        <label for="description">Descripcion</label>
-        <textarea name="description" class="form-control mb-3" #description="ngModel" [(ngModel)]="project.description"></textarea>
-
-        <small *ngIf="!description.valid && description.touched" class="invalid-feedback d-block mb-3">
-            La Descripcion no es valida
-        </small>
-    </div>
-
-    <input type="submit" value="Subir Proyecto" class="btn btn-success" [disabled]="projectForm.invalid">
-
-</form>
+<div class="games">
+    <ng-container *ngFor="let follow of follows">
+        <div class="card m-3" style="width: 18rem;">
+            <img src="{{follow.project.imageUrl}}" class="card-img-top"  *ngIf="follow.project.imageUrl">
+            <p *ngIf="!follow.project.imageUrl">No image</p>
+            <div class="card-body">
+                <h5 class="card-title">{{follow.project.name}}</h5>
+                <p class="card-text">{{follow.project.user.name}}</p>
+            </div>
+        </div>
+    </ng-container>
 </div>
+
+    
+     

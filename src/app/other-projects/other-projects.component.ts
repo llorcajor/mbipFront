@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { ProjectService } from '../project/project.service';
 import { FollowService } from '../services/follow.service';
+import { faBell} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-other-projects',
@@ -12,6 +13,7 @@ import { FollowService } from '../services/follow.service';
   providers: [ProjectService, FollowService]
 })
 export class OtherProjectsComponent implements OnInit {
+  faBell = faBell;
   projects: Project[]=[];
   follows: any;
   private token: any;

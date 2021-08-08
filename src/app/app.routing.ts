@@ -12,6 +12,9 @@ import { InitialPageComponent } from './initial-page/initial-page.component';
 import { ProjectEditComponent } from './project-edit/project-edit.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { OtherProjectsComponent } from './other-projects/other-projects.component';
+import { RequestsComponent } from './requests/requests.component';
+import { MyrequetsComponent } from './myrequets/myrequets.component'; 
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 import { IdentityGuard } from './services/identity.guard';
 
@@ -29,7 +32,9 @@ const appRoutes : Routes = [
     {path: 'project-edit/:id', component: ProjectEditComponent, canActivate: [IdentityGuard]},
     {path: 'project-detail/:id', component: ProjectDetailComponent, canActivate: [IdentityGuard]},
     {path: 'new-project', component: ProjectNewComponent, canActivate: [IdentityGuard]},
-    {path: 'prueba', component: ProjectNewComponent}
+    {path: 'requests', component: RequestsComponent},
+    {path: 'myrequests', component: MyrequetsComponent},
+    {path: 'user-detail/:id', component: UserDetailComponent, canActivate: [IdentityGuard]}
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { Project } from '../models/project.model';
 import { ProjectService } from '../project/project.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { faBell} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
@@ -11,7 +12,7 @@ import { UserService } from '../services/user.service';
   providers: [UserService, ProjectService]
 })
 export class ProjectDetailComponent implements OnInit {
-
+  faBell = faBell;
   public project!: Project;
   public identity;
   public token;

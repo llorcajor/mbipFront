@@ -10,7 +10,7 @@
             <a class="nav-link" aria-current="page" routerLink="/myprojects" routerLinkActive="active">My Projects</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" routerLink="/ajustes" routerLinkActive="active">My account</a>
+            <a class="nav-link" routerLink="/myrequests" routerLinkActive="active">My requests</a>
           </li>
           <li class="nav-item" >
             <a class="nav-link" routerLink="/new-project" routerLinkActive="active">Create new Project</a>
@@ -19,6 +19,12 @@
             <a class="nav-link" routerLink="/logout/1" routerLinkActive="active">Exit</a>
           </li>
         </ul>
+        <div class="image">
+          <a [routerLink]= "['/ajustes']">
+            <img src="{{identity.image}}" >
+          </a>
+        </div>
+        <button class="btn btn-warning mx-4" [routerLink]= "['/requests']"><fa-icon [icon]="faBell"></fa-icon></button>
     </div>
   </div>
 </nav>

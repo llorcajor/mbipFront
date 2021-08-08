@@ -50,6 +50,14 @@ export class UserService{
         return this._http.put(this.url+'user/edit', params, {headers:headers});
     }
 
+    getUser(token: string, id:number):Observable<any>{
+            
+        let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                        .set('Authorization', token);
+
+        return this._http.get(this.url+'user/detail/'+id, {headers:headers});
+    }
+
     getIdentity(){
         let identity = localStorage.getItem('identity');
 

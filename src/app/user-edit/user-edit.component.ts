@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {User} from '../models/user.model';
 import {UserService} from '../services/user.service';
+import { faBell} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-edit',
@@ -10,7 +11,7 @@ import {UserService} from '../services/user.service';
   providers: [UserService]
 })
 export class UserEditComponent implements OnInit {
-  
+  faBell = faBell;
 
   public user: User;
   public identity;

@@ -5,6 +5,8 @@ import { ProjectService } from '../project/project.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { Category } from '../models/category.model';
+import { faBell} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-project-new',
@@ -13,6 +15,7 @@ import { Category } from '../models/category.model';
   providers: [UserService, ProjectService]
 })
 export class ProjectNewComponent implements OnInit {
+  faBell = faBell;
   public project: Project;
   public identity;
   public token;

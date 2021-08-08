@@ -3,6 +3,7 @@ import {Project} from '../models/project.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { ProjectService } from './project.service';
+import { faBell} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { ProjectService } from './project.service';
   providers: [ProjectService]
 })
 export class ProjectComponent implements OnInit {
+  faBell = faBell;
    projects: Project[]=[];
    private token: any;
    identity: any;

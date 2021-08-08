@@ -10,7 +10,7 @@
             <a class="nav-link" aria-current="page" routerLink="/myprojects" routerLinkActive="active">My Projects</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" routerLink="/ajustes" routerLinkActive="active">My account</a>
+            <a class="nav-link" routerLink="/myrequests" routerLinkActive="active">My requests</a>
           </li>
           <li class="nav-item" >
             <a class="nav-link" routerLink="/new-project" routerLinkActive="active">Create new Project</a>
@@ -19,6 +19,12 @@
             <a class="nav-link" routerLink="/logout/1" routerLinkActive="active">Exit</a>
           </li>
         </ul>
+        <div class="image">
+          <a [routerLink]= "['/ajustes']">
+            <img src="{{identity.image}}" >
+          </a>
+        </div>
+        <button class="btn btn-warning mx-4" [routerLink]= "['/requests']"><fa-icon [icon]="faBell"></fa-icon></button>
     </div>
   </div>
 </nav>
@@ -37,9 +43,7 @@
                         <a  class="btn btn-danger m-2" (click)="deleteProject(project.id)">Eliminar</a>
                       </div>
                     </div>
-                
-            
-        
+                       
     </ng-container>
 </div>
 
@@ -48,10 +52,10 @@
 
 <nav aria-label="Page navigation example">
     <ul class="pagination">
-      <li class="page-item"><a class="page-link" [routerLink]= "['/inicio', prev_page]">Previous</a></li>
-      <li class="page-item" *ngFor="let num of number_page"><a class="page-link" [routerLink]= "['/inicio', num]" >{{num}}</a></li>
+      <li class="page-item"><a class="page-link" [routerLink]= "['/myprojects', prev_page]">Previous</a></li>
+      <li class="page-item" *ngFor="let num of number_page"><a class="page-link" [routerLink]= "['/myprojects', num]" >{{num}}</a></li>
       
-      <li class="page-item"><a class="page-link" [routerLink]= "['/inicio', next_page]">Next</a></li>
+      <li class="page-item"><a class="page-link" [routerLink]= "['/myprojects', next_page]">Next</a></li>
     </ul>
   </nav>
 

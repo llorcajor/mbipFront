@@ -1,0 +1,27 @@
+<div class="games">
+    <ng-container *ngFor="let follow of follows">
+        
+        <div *ngIf="follow.project.user.id === identity.sub" class="card m-3" style="width: 18rem;">
+            <img src="{{follow.user.image}}" class="card-img-top"  *ngIf="follow.user.image">
+            <p *ngIf="!follow.user.image">No image</p>
+            <div class="card-body">
+                <h5 class="card-title">{{follow.project.name}}</h5>
+                <p class="card-text">{{follow.user.name}}</p>
+                <button class="btn btn-success m-4" >Aceptar</button>
+                <button class="btn btn-danger" >Rechazar</button>
+            </div>
+        </div>
+    
+    </ng-container>
+</div>
+
+
+    
+        
+            
+    
+    
+            
+          
+    
+

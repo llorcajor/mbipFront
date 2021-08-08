@@ -21,6 +21,9 @@ import { InitialPageComponent } from './initial-page/initial-page.component';
 import { ProjectEditComponent } from './project-edit/project-edit.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { OtherProjectsComponent } from './other-projects/other-projects.component';
+import { RequestsComponent } from './requests/requests.component';
+import { MyrequetsComponent } from './myrequets/myrequets.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { OtherProjectsComponent } from './other-projects/other-projects.componen
     InitialPageComponent,
     ProjectEditComponent,
     ProjectDetailComponent,
-    OtherProjectsComponent
+    OtherProjectsComponent,
+    RequestsComponent,
+    MyrequetsComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
