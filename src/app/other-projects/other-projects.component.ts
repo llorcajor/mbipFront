@@ -6,6 +6,7 @@ import { ProjectService } from '../project/project.service';
 import { FollowService } from '../services/follow.service';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-other-projects',
   templateUrl: './other-projects.component.html',
@@ -18,10 +19,13 @@ export class OtherProjectsComponent implements OnInit {
   follows: any;
   private token: any;
   identity: any;
+  displayModal: boolean= false;
   public page!: number;
   public next_page: number | undefined;
   public prev_page: number | undefined;
   public number_page: number[]= [];
+
+  
   constructor(private _projectService: ProjectService, private _userService: UserService, private _route: ActivatedRoute, private _router: Router, private _followService: FollowService) { 
     this.identity= this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -87,8 +91,15 @@ export class OtherProjectsComponent implements OnInit {
         console.log(error);
         
       }
-
+      
     )
+    this.openModal();
+    
+
+  }
+
+  openModal(){
+    alert('Match realizado correctamente');
   }
 
   checkMatch(){
@@ -102,6 +113,7 @@ export class OtherProjectsComponent implements OnInit {
       }
 
     )
+  
   }
 
 }
