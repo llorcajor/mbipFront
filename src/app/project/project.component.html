@@ -29,9 +29,10 @@
   </div>
 </nav>
 
+<p *ngIf="projects.length ==0">No hay Proyectos creados</p>
+
 <div class="projects">
     <ng-container *ngFor="let project of projects">
-                
                     <div class="card m-3" style="width: 18rem;">
                       <img src="{{project.imageUrl}}" class="card-img-top" alt="{{project.name}}" *ngIf="project.imageUrl">
                       <p *ngIf="!project.imageUrl">No image</p>

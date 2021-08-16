@@ -5,13 +5,15 @@ import { UserService } from '../services/user.service';
 import { ProjectService } from '../project/project.service';
 import { FollowService } from '../services/follow.service';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
+import { CategoryService } from '../services/category.service';
+import { DropdownDirective } from '../directives/dropdown.directive';
 
 
 @Component({
   selector: 'app-other-projects',
   templateUrl: './other-projects.component.html',
   styleUrls: ['./other-projects.component.scss'],
-  providers: [ProjectService, FollowService]
+  providers: [ProjectService, FollowService, CategoryService]
 })
 export class OtherProjectsComponent implements OnInit {
   faBell = faBell;
@@ -24,12 +26,15 @@ export class OtherProjectsComponent implements OnInit {
   public next_page: number | undefined;
   public prev_page: number | undefined;
   public number_page: number[]= [];
+  public categories:any;
+  public category_id: any = 0;
 
   
-  constructor(private _projectService: ProjectService, private _userService: UserService, private _route: ActivatedRoute, private _router: Router, private _followService: FollowService) { 
+  constructor(private _projectService: ProjectService, private _userService: UserService, private _route: ActivatedRoute, private _router: Router, private _followService: FollowService, private _categoryService: CategoryService) { 
     this.identity= this._userService.getIdentity();
     this.token = this._userService.getToken();
-    
+    this.getCategories();
+    console.log(this.category_id);
   }
 
   ngOnInit(): void {
@@ -68,12 +73,7 @@ export class OtherProjectsComponent implements OnInit {
           this.next_page = response.total_page;
         }
         
-        /*
-        items_per_page: 5
-        page_actual: 2
-        total_items_count: 2
-        total_page: 1
-        */
+      
       },
       error => {
         console.log(error);
@@ -85,21 +85,18 @@ export class OtherProjectsComponent implements OnInit {
   onMatch(id: number){
     this._projectService.onMatch(this.token, id).subscribe(
       response => {
-        console.log(response);
+        alert('Match realizado correctamente');
+        console.log(response); 
       },
       error => {
+        alert('Match realizado correctamente');
         console.log(error);
         
       }
       
     )
-    this.openModal();
     
-
-  }
-
-  openModal(){
-    alert('Match realizado correctamente');
+    
   }
 
   checkMatch(){
@@ -114,6 +111,24 @@ export class OtherProjectsComponent implements OnInit {
 
     )
   
+  }
+
+  getCategories(){
+    this._categoryService.getCategories(this.token).subscribe(
+      response => {
+        this.categories= response.categories;
+        console.log(this.categories);
+      },
+      error => {
+        console.log(error);
+        
+      }
+    );
+  }
+
+  selectCategory(id: any){
+    this.category_id = id;
+    console.log(this.category_id);
   }
 
 }

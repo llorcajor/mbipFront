@@ -29,15 +29,29 @@
   </div>
 </nav>
 
+<div class="dropdown " appDropdown>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Filtrar Categorias
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+    <li ><a class="dropdown-item" (click)="selectCategory(0)">Borrar Filtros</a></li>
+    <li *ngFor="let category of categories"><a class="dropdown-item" (click)="selectCategory(category.id)">{{category.name}}</a></li>
+  </ul>
+</div>
+
 <div class="games">
-    <ng-container *ngFor="let project of projects">
-        
-        <div class="card m-3" style="width: 18rem;">
-          <img src="{{project.imageUrl}}" class="card-img-top" alt="{{project.name}}" *ngIf="project.imageUrl">
-          <p *ngIf="!project.imageUrl">No image</p>
+
+
+    <ng-container *ngFor="let project of projects">   
+        <div class="card m-3" style="width: 18rem;" *ngIf="project.category.id === category_id || category_id === 0">
+          <img src="{{project.imageUrl}}" class="card-img-top" alt="{{project.name}}" *ngIf="project.imageUrl" >
+          <p *ngIf="!project.imageUrl" >No image</p>
           <div class="card-body">
             <h5 class="card-title">{{project.name}}</h5>
-            <a class="card-title" [routerLink]= "['/user-detail', identity.sub]">{{identity.name}}</a>
+            <hr>
+            <button class="btn btn-primary" (click)="selectCategory(2)" >{{project.category.name}}</button>
+            <hr>
+            <a class="card-title" [routerLink]= "['/user-detail', identity.sub]">{{project.user.name}}</a>
             <p class="card-text">{{project.description}}</p>
             <button class="btn btn-success" (click)="onMatch(project.id)">Match</button>
           </div>

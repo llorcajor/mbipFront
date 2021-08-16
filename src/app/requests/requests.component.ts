@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { ProjectService } from '../project/project.service';
 import { FollowService } from '../services/follow.service';
+import { faBell} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-requests',
@@ -12,7 +13,7 @@ import { FollowService } from '../services/follow.service';
   providers: [ProjectService, FollowService]
 })
 export class RequestsComponent implements OnInit {
-
+  faBell = faBell;
   projects: Project[]=[];
   follows: any;
   private token: any;
@@ -38,6 +39,17 @@ export class RequestsComponent implements OnInit {
       }
 
     )
+  }
+  
+    deleteFollow(id:number){
+      this._followService.delete(this.token, id).subscribe(
+        response => {
+          this._router.navigate(['/home']);
+        },
+        error => {
+          console.log(error);
+        }
+        );
   }
 
 }

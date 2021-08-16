@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 
 
@@ -40,7 +41,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     OtherProjectsComponent,
     RequestsComponent,
     MyrequetsComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

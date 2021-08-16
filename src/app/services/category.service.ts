@@ -5,8 +5,9 @@ import { Observable } from "rxjs";
 import { global } from "../services/global";
 
 @Injectable()
-export class ProjectService{
+export class CategoryService{
     public url: string;
+    categorySelected = new EventEmitter<Category>();
 
     constructor(
         public _http: HttpClient
@@ -14,12 +15,12 @@ export class ProjectService{
         this.url = global.url;
     }
     
-        private category: Category[] =[
-            new Category(1,'Travel', 'yellow', '')
-          ];
 
-          getCategories(){
+          getCategories(token: string):Observable<any>{
+            let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                            .set('Authorization', token);
 
+            return this._http.get(this.url+'category/all', {headers:headers});
           }
 
     }

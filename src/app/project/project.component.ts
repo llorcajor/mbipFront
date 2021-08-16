@@ -48,6 +48,7 @@ export class ProjectComponent implements OnInit {
   getProjects(page: number){
     this._projectService.getProjects(this.token, page).subscribe(
       response => {
+        console.log(response);
         this.projects= response.projects;
         var number_pages= [];
         for(var i=1; i<=response.total_page; i++){
@@ -67,12 +68,7 @@ export class ProjectComponent implements OnInit {
           this.next_page = response.total_page;
         }
         
-        /*
-        items_per_page: 5
-        page_actual: 2
-        total_items_count: 2
-        total_page: 1
-        */
+        
       },
       error => {
         console.log(error);
