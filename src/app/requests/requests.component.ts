@@ -52,4 +52,15 @@ export class RequestsComponent implements OnInit {
         );
   }
 
+  sendMail(id: number){
+    this._followService.sendMail(this.token, id).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+      );
+  }
+
 }

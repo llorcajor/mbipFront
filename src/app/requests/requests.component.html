@@ -39,7 +39,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{follow.project.name}}</h5>
                 <p class="card-text">{{follow.user.name}}</p>
-                <button class="btn btn-success m-4" >Aceptar</button>
+                <button class="btn btn-success m-4" (click)="sendMail(follow.user.id)">Aceptar</button>
                 <button class="btn btn-danger" (click)="deleteFollow(follow.id)">Rechazar</button>
             </div>
         </div>
