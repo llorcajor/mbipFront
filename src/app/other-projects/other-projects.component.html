@@ -51,7 +51,7 @@
             <hr>
             <button class="btn btn-primary" (click)="selectCategory(2)" >{{project.category.name}}</button>
             <hr>
-            <a class="card-title" [routerLink]= "['/user-detail', identity.sub]">{{project.user.name}}</a>
+            <a class="card-title" [routerLink]= "['/user-detail', project.user.id]">{{project.user.name}}</a>
             <p class="card-text">{{project.description}}</p>
             <button class="btn btn-success" (click)="onMatch(project.id)">Match</button>
           </div>

@@ -4,6 +4,7 @@ import { Project } from '../models/project.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-detail',
@@ -12,7 +13,7 @@ import { User } from '../models/user.model';
   providers: [UserService]
 })
 export class UserDetailComponent implements OnInit {
-
+  faBell = faBell;
   public user!: User;
   public identity;
   public token;
