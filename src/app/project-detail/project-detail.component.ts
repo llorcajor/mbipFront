@@ -5,6 +5,7 @@ import { ProjectService } from '../project/project.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
@@ -24,6 +25,8 @@ export class ProjectDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProject();
+    
+    
   }
 
   getProject(){
@@ -34,7 +37,7 @@ export class ProjectDetailComponent implements OnInit {
         response => {
           this.project = response.project;
           console.log(this.project);
-          console.log(this.project.imageUrl);
+
         },
         error => {
           console.log(error);
