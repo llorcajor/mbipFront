@@ -1,13 +1,60 @@
+// MY THEME COLORS
+$purple-dark: #002973;
+$purple-light: #00b4d8;
+$pink: #b9ffff;
+$footer: #151414;
+
+$primary: $purple-dark;
+$secondary: $pink;
+
+// ACCORDION OVERRIDES
+$accordion-padding-y: 1.5rem; // LEAVE THE PADDING-Y TO DEFAULT
+$accordion-padding-x: 1.5rem; // LEAVE THE PADDING-X TO DEFAULT
+$accordion-icon-color: $primary;
+$accordion-icon-active-color: $secondary;
+
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/> <path d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>  <path d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/></svg>");
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  background: url("../../assets/images/oriental-tiles.png");
+}
 .image {
   display: flex;
-  width: 1200px;
   justify-content: flex-end;
 }
 .image img {
   width: 5vh;
   height: 5vh;
 }
+.navbar-brand {
+  color: white;
+}
+.navbar li a {
+  color: white;
+}
+.navbar {
+  background: linear-gradient(
+    to right,
+    rgba(#002973, 0.95),
+    rgba(#155db1, 0.95),
+    rgba(#2196f3, 0.95),
+    rgba(#81c9fa, 0.95),
+    rgba(#b9ffff, 0.95)
+  );
+}
 
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  background: url("../../assets/images/bush.png");
+}
 .big-image {
   display: flex;
   width: 50vh;

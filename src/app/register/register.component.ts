@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {User} from '../models/user.model';
 import {UserService} from '../services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import {UserService} from '../services/user.service';
 export class RegisterComponent implements OnInit {
   public user: User;
 
-  constructor(private _userService: UserService) { 
+  constructor(private _userService: UserService, private _router: Router) { 
     this.user = new User(1, '', '', '', '', '', 'ROLE_USER', '');
   }
 
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit {
     this._userService.register(this.user).subscribe(
        response => {
          console.log(response);
-         form.reset();
+         this._router.navigate(['/login']);
        },
        error => {
          console.log(error);

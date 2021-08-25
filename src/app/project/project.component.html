@@ -1,10 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+  
+  <div class="container-fluid col-10" >
     <a class="navbar-brand" routerLink="/home">Inicio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"  >
+      <span class="navbar-toggler-icon" ></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse  " id="navbarNav"  >
       <ul class="nav nav-pills">
           <li class="nav-item" >
             <a class="nav-link" aria-current="page" routerLink="/myprojects" routerLinkActive="active">Mis Proyectos</a>
@@ -19,14 +20,15 @@
             <a class="nav-link" routerLink="/logout/1" routerLinkActive="active">Salir</a>
           </li>
         </ul>
-        <div class="image">
+        
+    </div>
+    <div class="image col-sm-2">
           <a [routerLink]= "['/ajustes']">
             <img src="{{identity.image}}" >
           </a>
         </div>
         <button class="btn btn-warning mx-4" [routerLink]= "['/requests']"><fa-icon [icon]="faBell"></fa-icon></button>
     </div>
-  </div>
 </nav>
 
 <p *ngIf="projects.length ==0">No hay Proyectos creados</p>
