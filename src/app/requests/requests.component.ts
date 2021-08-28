@@ -44,6 +44,7 @@ export class RequestsComponent implements OnInit {
     deleteFollow(id:number){
       this._followService.delete(this.token, id).subscribe(
         response => {
+          alert('Se ha rechazado la solicitud');
           this._router.navigate(['/home']);
         },
         error => {
@@ -52,10 +53,20 @@ export class RequestsComponent implements OnInit {
         );
   }
 
-  sendMail(id: number){
+  sendMail(id: number, id2:number){
     this._followService.sendMail(this.token, id).subscribe(
       response => {
         console.log(response);
+        alert('Se ha aceptado la solicitud');
+        this._followService.delete(this.token, id2).subscribe(
+          response => {
+            console.log(response);
+          },
+          error => {
+            console.log(error);
+          }
+          );
+        this._router.navigate(['/home']);
       },
       error => {
         console.log(error);

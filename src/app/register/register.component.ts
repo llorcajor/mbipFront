@@ -29,7 +29,13 @@ export class RegisterComponent implements OnInit {
     this._userService.register(this.user).subscribe(
        response => {
          console.log(response);
-         this._router.navigate(['/login']);
+         if(response.status === 'error'){
+          alert('El usuario ya existe');
+         }
+         else{
+          this._router.navigate(['/login']);
+         }
+         
        },
        error => {
          console.log(error);
