@@ -58,10 +58,12 @@ export class ProjectEditComponent implements OnInit {
     this._projectService.update(this.project, this.token, this.project.id).subscribe(
       response => {
         console.log(response);
+        alert('Proyecto actualizado correctamente');
         this._router.navigate(['/myprojects']);
       },
       error => {
         console.log(error);
+        alert('Proyecto actualizado correctamente');
         this._router.navigate(['/myprojects']);
       }
    );

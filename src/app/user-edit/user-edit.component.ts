@@ -33,9 +33,11 @@ export class UserEditComponent implements OnInit {
         this.identity = response.user;
         this.user = response.user;
         localStorage.setItem('identity', JSON.stringify(this.identity));
+        alert('Usuario Actualizado');
       },
       error => {
         console.log(error);
+        alert('Usuario Actualizado');
       }
     );
   }

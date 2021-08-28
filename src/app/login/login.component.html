@@ -10,7 +10,7 @@
             Te has identificado correctamente
         </div>
     
-        <div class="alert alert-danger col-md-5 mt-3" *ngIf="status=='error'">
+        <div class="alert alert-danger col-md-5 mt-3 m-auto" *ngIf="status=='error'">
             No te has identificado correctamente!
         </div>
         <form class="col-md-5 m-auto pl-0" #loginForm="ngForm" (ngSubmit)= "onSubmit(loginForm)">
