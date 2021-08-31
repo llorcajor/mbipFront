@@ -5,6 +5,7 @@ import { UserService } from '../services/user.service';
 import { ProjectService } from '../project/project.service';
 import { FollowService } from '../services/follow.service';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-myrequets',
@@ -14,6 +15,7 @@ import { faBell} from '@fortawesome/free-solid-svg-icons';
 })
 export class MyrequetsComponent implements OnInit {
   faBell = faBell;
+  faCaretSquareDown = faCaretSquareDown;
   projects: Project[]=[];
   follows: any;
   private token: any;

@@ -8,6 +8,7 @@ import { Category } from '../models/category.model';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
 import { DropdownDirective } from '../directives/dropdown.directive';
 import { CategoryService } from '../services/category.service';
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -18,6 +19,7 @@ import { CategoryService } from '../services/category.service';
 })
 export class ProjectNewComponent implements OnInit {
   faBell = faBell;
+  faCaretSquareDown = faCaretSquareDown;
   public project: Project;
   public identity;
   public token;

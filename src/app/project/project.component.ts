@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { ProjectService } from './project.service';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { faBell} from '@fortawesome/free-solid-svg-icons';
 })
 export class ProjectComponent implements OnInit {
   faBell = faBell;
+  faCaretSquareDown = faCaretSquareDown;
    projects: Project[]=[];
    private token: any;
    identity: any;

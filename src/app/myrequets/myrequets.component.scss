@@ -56,3 +56,24 @@ $accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3
   background: url("../../assets/blue-abstract-ocean-waves-background-vector.jpg");
   background-repeat: round;
 }
+
+.little-navbar {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .little-navbar {
+    display: block;
+    height: 5vh;
+    width: 5vh;
+    li {
+      color: black;
+      a {
+        color: black;
+      }
+    }
+  }
+  .big-navbar {
+    display: none;
+  }
+}

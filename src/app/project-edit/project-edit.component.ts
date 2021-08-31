@@ -7,6 +7,7 @@ import { UserService } from '../services/user.service';
 import { Category } from '../models/category.model';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
 import { CategoryService } from '../services/category.service';
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -19,6 +20,7 @@ import { CategoryService } from '../services/category.service';
 })
 export class ProjectEditComponent implements OnInit {
   faBell = faBell;
+  faCaretSquareDown = faCaretSquareDown;
   public project: Project;
   public identity;
   public token;

@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import {User} from '../models/user.model';
 import {UserService} from '../services/user.service';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-edit',
@@ -12,7 +13,7 @@ import { faBell} from '@fortawesome/free-solid-svg-icons';
 })
 export class UserEditComponent implements OnInit {
   faBell = faBell;
-
+  faCaretSquareDown = faCaretSquareDown;
   public user: User;
   public identity;
   public token;
