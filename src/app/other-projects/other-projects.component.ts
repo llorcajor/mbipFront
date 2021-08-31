@@ -7,7 +7,7 @@ import { FollowService } from '../services/follow.service';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
 import { CategoryService } from '../services/category.service';
 import { DropdownDirective } from '../directives/dropdown.directive';
-
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-other-projects',
@@ -17,6 +17,7 @@ import { DropdownDirective } from '../directives/dropdown.directive';
 })
 export class OtherProjectsComponent implements OnInit {
   faBell = faBell;
+  faCaretSquareDown = faCaretSquareDown;
   projects: Project[]=[];
   follows: any;
   private token: any;

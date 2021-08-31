@@ -48,3 +48,24 @@ $accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3
     rgba(#b9ffff, 0.95)
   );
 }
+
+.little-navbar {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .little-navbar {
+    display: block;
+    height: 5vh;
+    width: 5vh;
+    li {
+      color: black;
+      a {
+        color: black;
+      }
+    }
+  }
+  .big-navbar {
+    display: none;
+  }
+}
